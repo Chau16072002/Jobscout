@@ -1,4 +1,8 @@
 <?php
+
+
+
+
 /**
  * JobScout functions and definitions
  *
@@ -79,6 +83,7 @@ require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
 if( jobscout_is_woocommerce_activated() ){
     require get_template_directory() . '/inc/woocommerce-functions.php';    
 }
+
 
 /**
  * Modify filter hooks of WP Job Manager plugin.

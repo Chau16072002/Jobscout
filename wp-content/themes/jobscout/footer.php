@@ -24,6 +24,24 @@
      * @hooked jobscout_footer_bottom - 40
      * @hooked jobscout_footer_end    - 50
     */
+    ?>
+<div class="class2"  style=" ">
+    <footer style="
+  justify-content: space-between;
+  padding: 0 5%;">
+        <div class="container">
+            <div class="row" style="position: relative;" >  
+                    <h3  style="display : inline-block;color:white ">Subcribe to <br> our 
+                        Newsletter</h3>
+                        <input type="" name="" value="" placeholder="<i></i>Enter your email" class="aaa">
+                    <a class="cta" href="#"><button class="btn2">SUBSCRIBE</button></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</div>
+<?php
     do_action( 'jobscout_footer' );
     
     /**
@@ -34,6 +52,7 @@
     do_action( 'jobscout_after_footer' );
 
     wp_footer(); ?>
-
+?>
 </body>
+
 </html>
