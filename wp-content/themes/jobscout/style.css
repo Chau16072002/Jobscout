@@ -2901,7 +2901,7 @@ section.article-section {
 
 .article-section .article-wrap {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
   text-align: left;
   margin-top: 50px;
@@ -2915,7 +2915,7 @@ section.article-section {
 }
 
 .article-section .article-wrap article img {
-  width: 100%;
+  width: 40%;
 }
 
 .article-section .article-wrap header.entry-header {
@@ -8241,3 +8241,4 @@ top: 25px !important;
   font-size: 0.8888em;
   font-weight: 400;
 }
+
