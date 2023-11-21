@@ -15,7 +15,7 @@ if( $ed_banner && has_custom_header() ){ ?>
         <div class="item">
             <?php the_custom_header_markup(); ?>
             <div class="banner-caption">
-                <div class="container">
+                <!-- <div class="container"> -->
                     <div class="caption-inner">
                         <?php 
                             if( $banner_title ) echo '<h2 class="title">' . esc_html( $banner_title ) . '</h2>';
@@ -37,7 +37,7 @@ if( $ed_banner && has_custom_header() ){ ?>
                             </div>
                         </div>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>
