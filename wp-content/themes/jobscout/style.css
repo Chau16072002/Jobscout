@@ -1856,7 +1856,7 @@ SIDEBARS
 
 .rightsidebar #primary {
   float: left;
-  width: 75%;
+  width: 100%;
   padding-right: 40px;
 }
 

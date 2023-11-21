@@ -14,50 +14,73 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area article-section-custom">
 		
+	<?php
+/**
+ * Blog Section
+ * 
+ * @package JobScout
+ */
+
+$blog_heading = get_theme_mod( 'blog_section_title', __( 'NEWEST BLOG ENTRIES', 'jobscout' ) );
+$sub_title    = get_theme_mod( 'blog_section_subtitle', __( 'We will help you find it. We are your first step to becoming everything you want to be.', 'jobscout' ) );
+$blog         = get_option( 'page_for_posts' );
+$label        = get_theme_mod( 'blog_view_all', __( 'See More Posts', 'jobscout' ) );
+$hide_author  = get_theme_mod( 'ed_post_author', false );
+$hide_date    = get_theme_mod( 'ed_post_date', false );
+$ed_blog      = get_theme_mod( 'ed_blog', true );
+
+$args = array(
+    'post_type'           => 'post',
+    'post_status'         => 'publish',
+    'posts_per_page'      => 8,
+    'ignore_sticky_posts' => true
+);
+
+$qry = new WP_Query( $args );?>
+<main id="main" class="site-main article-wrap">
+<?php if( $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
+<section id="blog-section" class="article-section">
+    <div class="container">
         <?php 
-        /**
-         * Before Posts hook
-        */
-        do_action( 'jobscout_before_posts_content' );
+            if( $blog_heading ) echo '<h2 class="section-title">' . esc_html( $blog_heading ) . '</h2>';
         ?>
-        
-        <main id="main" class="site-main">
+        <?php if( $qry->have_posts() ){ ?>
+        <div class="article-wrap" >
+            <?php 
+                while( $qry->have_posts() ){
+                    $qry->the_post(); ?>
+            <article class="post">
+                <figure class="post-thumbnail" style="display: flex; padding:20px">
+                <?php 
+                                if( has_post_thumbnail() ){
+                                    
+                                    the_post_thumbnail( array( 'itemprop' => 'image' ) );
+                                }else{ 
+                                    jobscout_fallback_svg_image( 'jobscout-blog' ); 
+                                }                            
+                            ?>
+                        <div style="margin:10px">
+                        <a style="font-weight:bold" href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
+                        <?php echo wp_trim_words(get_the_content(), 10,'');?><br>
+                        <a href="<?php the_permalink(); ?>" class="read-more" style="color: orange; font-weight:bold;">Read more</a>
+                        </div>           
+                
+                </figure>           
+            </article>
+            <?php 
+                }
+                wp_reset_postdata();
+                ?>
+        </div><!-- .article-wrap -->
 
-		<?php
-		if ( have_posts() ) :
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+        <?php } ?>
 
-			endwhile;
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-        
-        <?php
-        /**
-         * After Posts hook
-         * @hooked jobscout_navigation - 15
-        */
-        do_action( 'jobscout_after_posts_content' );
-        ?>
-        
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+    </div>
+</section>
+</main><!-- #main -->
+<?php 
+}
