@@ -39,7 +39,6 @@ $args = array(
 );
 
 $qry = new WP_Query( $args );?>
-<main id="main" class="site-main article-wrap">
 <?php if( $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
 <section id="blog-section" class="article-section">
     <div class="container">
@@ -81,6 +80,7 @@ $qry = new WP_Query( $args );?>
 
     </div>
 </section>
-</main><!-- #main -->
 <?php 
-}
+} 
+get_sidebar();
+get_footer();
