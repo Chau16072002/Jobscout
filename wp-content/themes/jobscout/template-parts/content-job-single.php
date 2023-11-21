@@ -1,4 +1,4 @@
-<?php
+z<?php
 /**
  * Template part for displaying posts
  *
