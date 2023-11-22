@@ -14,6 +14,19 @@
 
 get_header(); ?>
 
+<section id="cta-section" class="bg-cta-section">
+	   <?php// dynamic_sidebar( 'cta' ); ?> 
+	   <section id="cta-section" class="bg-cta-section">
+	   <section id="raratheme_companion_cta_widget-1" class="widget widget_raratheme_companion_cta_widget">        
+        <div class="centered bttk-cta-bg" style="background:url(http://localhost:8080/Jobscout/wp-content/uploads/2019/01/StockSnap_E5GUBD8MWN-1.jpg) no-repeat; background-size: cover; background-position: center">
+            <div class="raratheme-cta-container">
+                <h2 class="widget-title" itemprop="name">PDS NEWS</h2>
+            </div> 
+        </div>        
+        </section> 
+	</section>
+	</section> <!-- .bg-cta-section -->
+    <div class="container">
 	<div id="primary" class="content-area article-section-custom">
 		
 	<?php
@@ -41,7 +54,6 @@ $args = array(
 $qry = new WP_Query( $args );?>
 <?php if( $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
 <section id="blog-section" class="article-section">
-    <div class="container">
         <?php 
             if( $blog_heading ) echo '<h2 class="section-title">' . esc_html( $blog_heading ) . '</h2>';
         ?>
@@ -78,9 +90,11 @@ $qry = new WP_Query( $args );?>
 
         <?php } ?>
 
-    </div>
 </section>
 <?php 
-} 
+} ?>
+ </div>
+ </div>
+ <?php
 get_sidebar();
 get_footer();

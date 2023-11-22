@@ -2315,7 +2315,7 @@ SITE BANNER SECTION
 }
 
 .banner-caption .caption-inner {
-  max-width: 770px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -2370,7 +2370,7 @@ SITE BANNER SECTION
   width: auto;
   padding-right: 0;
   display: flex;
-  flex: 1;
+  /* flex: 1; */
   padding-left: 0;
 }
 
@@ -5684,7 +5684,7 @@ div.job_listings .load_more_jobs:focus {
 .jobscout_job_filters .search_jobs div.search_location {
   float: none;
   width: auto;
-  flex: 1;
+  /* flex: 1; */
 }
 
 .jobscout_job_filters .search_jobs div.filter_wide,
@@ -8193,7 +8193,7 @@ header p{
 .nav__links li {
   display: inline-block;
   padding: 0px 20px;
-  margin-top: 18px;
+  margin-top: 18px !important;
   
 }
 
@@ -8361,4 +8361,96 @@ section.article-section {
 div.job_listings .load_more_jobs::before {
     display: none;
 }
+.site-content>.container {
+  max-width: none !important;
+}
 /* **************************************************** */
+/* Banner-search */
+
+.job_listings {
+  background-color: rgba(0, 0, 0, 0.4); 
+  padding: 20px 10px 20px 10px; 
+}
+
+.search_keywords {
+  width: 600px !important;
+  display: flex;
+  align-items: center;
+  background-color: #fff; 
+  margin-left: 10px;
+}
+
+.search_keywords .icon {
+  color: #ff8c00; 
+  padding-left: 20px;
+  font-size: 20px;
+  border: none;
+}
+
+.search_keywords input::placeholder {
+  color: #a6a6a6;
+  font-size: 18px;
+  font-weight: normal;
+  font-family: sans-serif;
+}
+
+.search_keywords input:focus {
+  border: none; 
+  outline: none;
+}
+
+.search_location {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #fff;
+  width: 300px !important;
+}
+
+.search_location .icon {
+  color: #ff8c00; 
+  font-size: 20px;
+  padding-left: 20px;
+
+}
+
+.search_location select { 
+  box-sizing: border-box;
+  border: none; 
+  outline: none; 
+}
+
+.search_submit {
+  background-color: #ea751e;
+}
+
+/* .search_submit input {
+  color: #fff !important;
+  text-align: center;
+} */
+
+.nut_submit {
+   width: 150px;
+  /* height: 60px; */
+  font-size: 16px;
+  font-style: bold;
+  background-color: #ea751e;
+  border: #ea751e;
+  color: #fff;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.nut_submit:focus {
+  border: none; 
+  outline: none;
+}
+
+.banner-caption .title {
+  text-align: left;
+}
+
+.banner-caption .description {
+  text-align: left;
+}

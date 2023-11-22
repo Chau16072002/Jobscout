@@ -33,7 +33,7 @@
             <div class="row" style="position: relative;" >  
                     <h3  style="display : inline-block;color:white ">Subcribe to <br> our 
                         Newsletter</h3>
-                        <input type="" name="" value="" placeholder="<i></i>Enter your email" class="aaa">
+                        <input type="" name="" value="" placeholder="Enter your email" class="aaa">
                     <a class="cta" href="#"><button class="btn2">SUBSCRIBE</button></a>
                 </div>
             </div>
@@ -51,14 +51,25 @@
             text-align: center;
             background-color: #f2f2f2;
             ">
-            <?php
-    $pages = get_pages();
-    foreach ($pages as $page) :
-        $page_title = $page->post_title;
-        $page_link = get_permalink($page->ID);?>
-            <a style="padding: 25px; font-weight:bold; color: #040405;"
-                href="<?php echo $page_link; ?>"><?php echo "$page_title";?></a>
-            <?php endforeach;?>
+           <nav>
+                    <ul class="nav__links" id="primary-menu-list" class="menu-wrapper">
+                        
+                    <?php
+					wp_nav_menu(
+						array(
+							'theme_location'  => 'primary',
+							'menu_class'      => 'menu-wrapper',
+							'container_class' => 'primary-menu-container  ',
+							'items_wrap'      => '<ul  id="primary-menu-list" style="text-align:center;margin:0 !important;" class="%2$s"><li menu-item menu-item-type-post_type menu-item-object-page menu-item-986><a href="http://localhost:8080/Jobscout">Home</a></li> %3$s </ul>',
+							'fallback_cb'     => false,
+						)
+					);
+				?>
+                       
+                      
+                    </ul>
+                </nav>
+
             <div class="icons" style="margin-top:20px">
             <i class="fa-brands fa-facebook fa-2xl" style="color: blue; padding: 25px;"></i>
             <i class="fa-brands fa-google fa-2xl" style="padding: 25px;"></i>
